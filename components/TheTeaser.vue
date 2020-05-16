@@ -1,5 +1,8 @@
 <template>
-  <h1 v-editable="blok" class="col-2">{{ blok.headline }}</h1>
+  <div>
+    <h2 v-editable="blok" class="col-2 mx-auto my-10">{{ blok.headline }}</h2>
+    <hr class="mb-10" />
+  </div>
 </template>
 
 <script>
@@ -12,3 +15,4 @@ export default {
   }
 };
 </script>
+

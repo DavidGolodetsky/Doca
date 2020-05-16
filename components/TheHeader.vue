@@ -4,7 +4,7 @@
       <v-btn text fab @click="drawer = !drawer">
         <v-icon dark>mdi-format-list-bulleted-square</v-icon>
       </v-btn>
-      <!-- <h1 class="col-2">LAPI</h1> -->
+      <h1 class="col-2">LAPI</h1>
       <v-text-field
         dense
         hide-details
@@ -23,12 +23,12 @@
 
 <script>
 import TheSidebar from "~/components/TheSidebar";
-import Teaser from "~/components/Teaser";
+import TheTeaser from "~/components/TheTeaser";
 
 export default {
   components: {
     TheSidebar,
-    Teaser
+    TheTeaser
   },
   data() {
     return {

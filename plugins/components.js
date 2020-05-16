@@ -1,10 +1,10 @@
 import Vue from 'vue'
-import Page from '~/components/Page'
-import Grid from '~/components/Grid'
-import Feature from '~/components/Feature'
-import Teaser from '~/components/Teaser'
+import ThePage from '~/components/ThePage'
+import TheGrid from '~/components/TheGrid'
+import TheFeature from '~/components/TheFeature'
+import TheTeaser from '~/components/TheTeaser'
 
-Vue.component('page', Page)
-Vue.component('feature', Feature)
-Vue.component('teaser', Teaser)
-Vue.component('grid', Grid)
+Vue.component('the-page', ThePage)
+Vue.component('the-feature', TheFeature)
+Vue.component('the-teaser', TheTeaser)
+Vue.component('the-grid', TheGrid)

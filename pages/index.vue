@@ -1,42 +1,15 @@
 <template>
   <div>
-    <component
-      v-if="story.content.component"
-      :key="story.content._uid"
-      :blok="story.content"
-      :is="story.content.component"
-    />
+    <component v-if="home" :key="home._uid" :blok="home" :is="home.component" />
   </div>
 </template>
 <script>
+import { mapGetters } from "vuex";
 export default {
-  data() {
-    return {
-      story: { content: {} }
-    };
+  computed: {
+    ...mapGetters("home", ["home"])
   },
-  asyncData(context) {
-    return context.app.$storyapi
-      .get("cdn/stories/home", {
-        version: "draft"
-      })
-      .then(res => res.data)
-      .catch(res => {
-        if (!res.response) {
-          console.log(res);
-          context.error({
-            statusCode: 404,
-            message: "Failed to receive content from api"
-          });
-        } else {
-          console.log(res.response.data);
-          context.error({
-            statusCode: res.response.status,
-            message: res.response.message
-          });
-        }
-      });
-  },
+  // TODO:move to default?
   mounted() {
     this.$storybridge.on(["published", "change"], e => {
       this.$nuxt.$router.go({

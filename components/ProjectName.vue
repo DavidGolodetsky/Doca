@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h2 v-editable="blok" class="mb-10">{{ blok.headline }}</h2>
-    <hr class="mb-10" />
+    <h1 v-editable="blok">{{ blok.name }}</h1>
   </div>
 </template>
 
@@ -15,4 +14,3 @@ export default {
   }
 };
 </script>
-

@@ -4,10 +4,10 @@
       <template v-slot:activator>
         <v-list-item-title>Home</v-list-item-title>
       </template>
-      <v-list-item class="nested_item" v-for="item in items" :key="item.title">
-        <nuxt-link class="item_link" :to="item.link">
+      <v-list-item class="nested_item" v-for="(article, i) in articles" :key="i">
+        <nuxt-link class="item_link" :to="article.id">
           <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-title>{{ article.title }}</v-list-item-title>
           </v-list-item-content>
         </nuxt-link>
       </v-list-item>
@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   props: {
     drawer: {
@@ -24,13 +26,11 @@ export default {
   },
   data() {
     return {
-      toggleDrawer: null,
-      items: [
-        { title: "Home", link: "home" },
-        { title: "My Account", link: "account" },
-        { title: "Users", link: "users" }
-      ]
+      toggleDrawer: null
     };
+  },
+  computed: {
+    ...mapGetters("articles", ["articles"])
   },
   created() {
     this.toggleDrawer = this.drawer;

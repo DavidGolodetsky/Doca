@@ -1,10 +1,12 @@
 <template>
-  <div>
+  <div class="the_header">
     <v-app-bar app>
       <v-btn text fab @click="drawer = !drawer">
-        <v-icon dark>mdi-format-list-bulleted-square</v-icon>
+        <v-icon dark>mdi-menu-open</v-icon>
       </v-btn>
-      <h1 class="col-2">LAPI</h1>
+      <nuxt-link class="project_name" to="/">
+        <project-name :blok="project" class="col-2" />
+      </nuxt-link>
       <v-text-field
         dense
         hide-details
@@ -23,18 +25,29 @@
 
 <script>
 import TheSidebar from "~/components/TheSidebar";
-import TheTeaser from "~/components/TheTeaser";
+import ProjectName from "~/components/ProjectName";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
     TheSidebar,
-    TheTeaser
+    ProjectName
   },
   data() {
     return {
       drawer: true
     };
+  },
+  computed: {
+    ...mapGetters("home", ["project"])
   }
 };
 </script>
 
+<style scoped lang="scss">
+.the_header {
+  .project_name {
+    color: #fff !important;
+  }
+}
+</style>

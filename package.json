@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-storyblok",
+  "name": "Doca",
   "version": "1.0.0",
-  "description": "My remarkable Nuxt.js project",
+  "description": "Documentation on Nuxt, Storyblok and Vuetify",
   "author": "David Go",
   "private": true,
   "scripts": {

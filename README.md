@@ -1,6 +1,6 @@
-# nuxt-storyblok
+# LADI
 
-> My remarkable Nuxt.js project
+> Documentation on Nuxt, Storyblok and Vuetify.
 
 ## Build Setup
 

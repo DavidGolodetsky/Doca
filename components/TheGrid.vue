@@ -1,18 +1,23 @@
 <template>
   <ul class="the_grid" v-editable="blok">
     <li class="grid_item" v-for="blok in blok.columns" :key="blok._uid">
-      <component :blok="blok" :is="blok.component" />
+      <the-feature :blok="blok" />
     </li>
   </ul>
 </template>
 
 <script>
+import TheFeature from "~/components/TheFeature";
+
 export default {
   props: {
     blok: {
       type: Object,
       required: true
     }
+  },
+  components: {
+    TheFeature
   }
 };
 </script>

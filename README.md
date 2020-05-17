@@ -1,4 +1,4 @@
-# LADI
+# Doca
 
 > Documentation on Nuxt, Storyblok and Vuetify.
 

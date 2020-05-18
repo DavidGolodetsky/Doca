@@ -26,6 +26,7 @@ export const actions = {
             // TODO:change to 'published' for prod mode
             version: "draft"
         })
+            // TODO:rewrite in article fashion
             .then(res => commit('home/SET_HOME', res.data.story.content))
             .catch(err => {
                 console.log(err)
@@ -35,7 +36,18 @@ export const actions = {
             version: "draft",
             starts_with: "articles/"
         })
-            .then(res => commit('articles/SET_ARTICLES', res.data.stories))
+            .then(res => {
+                const articles = res.data.stories.map(ar => {
+                    return {
+                        blok: ar.content,
+                        id: ar.slug,
+                        title: ar.content.title,
+                        intro: ar.content.intro,
+                        body: ar.content.body,
+                    }
+                })
+                commit('articles/SET_ARTICLES', articles)
+            })
             .catch(err => {
                 console.log(err)
                 commit('SET_ERROR', err)

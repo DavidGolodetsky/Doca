@@ -15,6 +15,14 @@ import TheHeader from "@/components/TheHeader";
 export default {
   components: {
     TheHeader
+  },
+  mounted() {
+    this.$storybridge.on(["published", "change"], e => {
+      this.$nuxt.$router.go({
+        path: this.$nuxt.$router.currentRoute,
+        force: true
+      });
+    });
   }
 };
 </script>

@@ -35,17 +35,7 @@ export const actions = {
             version: "draft",
             starts_with: "articles/"
         })
-            .then(res => {
-                const articles = res.data.stories.map(ar => {
-                    return {
-                        id: ar.slug,
-                        title: ar.content.title,
-                        intro: ar.content.intro,
-                        body: ar.content.body,
-                    }
-                })
-                commit('articles/SET_ARTICLES', articles)
-            })
+            .then(res => commit('articles/SET_ARTICLES', res.data.stories))
             .catch(err => {
                 console.log(err)
                 commit('SET_ERROR', err)

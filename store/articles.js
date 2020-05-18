@@ -16,6 +16,6 @@ export const getters = {
         return state.articles
     },
     article(state) {
-        return (articleId) => state.articles.find(article => article.id === articleId)
+        return (articleSlug) => state.articles.find(article => article.slug === articleSlug)
     },
 }

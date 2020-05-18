@@ -28,6 +28,10 @@ ul {
   list-style: none;
 }
 
+.spaces {
+  white-space: pre-line;
+}
+
 .app a {
   color: #fff;
   text-decoration: none;

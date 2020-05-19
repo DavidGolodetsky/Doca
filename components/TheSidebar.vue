@@ -5,7 +5,7 @@
         <v-list-item-title>Home</v-list-item-title>
       </template>
       <v-list-item class="nested_item" v-for="(article, i) in articles" :key="i">
-        <nuxt-link class="item_link" :to="article.id">
+        <nuxt-link class="item_link" :to="`/articles/${article.id}`">
           <v-list-item-content>
             <v-list-item-title>{{ article.title }}</v-list-item-title>
           </v-list-item-content>

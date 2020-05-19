@@ -7,7 +7,8 @@
       <nuxt-link class="project_name" to="/">
         <project-name :blok="project" class="col-2" />
       </nuxt-link>
-      <v-text-field
+      <!-- TODO: add later -->
+      <!-- <v-text-field
         dense
         hide-details
         class="col-4 ml-auto"
@@ -15,7 +16,7 @@
         label="Search"
         single-line
         solo
-      />
+      />-->
     </v-app-bar>
     <v-navigation-drawer app v-model="drawer">
       <the-sidebar />

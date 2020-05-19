@@ -1,4 +1,5 @@
 const colors = require('vuetify/es5/util/colors').default
+const axios = require('axios')
 
 module.exports = {
   head: {
@@ -24,14 +25,10 @@ module.exports = {
     [
       'storyblok-nuxt',
       {
-        // TODO:remove it to .env
-        accessToken: 'gxRH86qIPeC1TQa00G44Xwtt',
+        accessToken: process.env.NODE_ENV === "production" ? 'RWdQ7L81dLfNGsdXr0M0Gwtt' : 'gxRH86qIPeC1TQa00G44Xwtt',
         caceProvider: 'memory'
       }
     ],
-    // TODO: do we need this?
-    '@nuxtjs/axios',
-    '@nuxtjs/dotenv',
   ],
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
@@ -50,7 +47,15 @@ module.exports = {
       }
     }
   },
-  build: {
-    extend(config, ctx) { }
+  generate: {
+    routes: () => {
+      let cacheVersion = Math.floor(Date.now() / 1e3)
+      return axios.get(`https://api.storyblok.com/v1/cdn/stories?version=published&token=RWdQ7L81dLfNGsdXr0M0Gwtt&starts_with=articles&cv=${cacheVersion}`)
+        .then(res => {
+          console.log(res.data.stories)
+          const articles = res.data.stories.map(ar => ar.full_slug)
+          return ['/', '/articles', ...articles]
+        })
+    }
   }
 }

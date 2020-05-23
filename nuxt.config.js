@@ -29,6 +29,7 @@ module.exports = {
         caceProvider: 'memory'
       }
     ],
+    ['vue-scrollto/nuxt', { duration: 300 }],
   ],
   vuetify: {
     customVariables: ['~/assets/variables.scss'],

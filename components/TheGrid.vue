@@ -25,6 +25,7 @@ export default {
 <style lang="scss" scoped>
 .the_grid {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   justify-content: space-around;
   .grid_item {

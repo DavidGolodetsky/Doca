@@ -1,43 +1,38 @@
 <template>
   <div class="the_header">
-    <v-app-bar app>
-      <v-btn text fab @click="drawer = !drawer">
-        <v-icon dark>mdi-menu-open</v-icon>
-      </v-btn>
-      <nuxt-link class="project_name" to="/">
-        <project-name :blok="project" class="col-2" />
-      </nuxt-link>
-      <!-- TODO: add later -->
-      <!-- <v-text-field
-        dense
-        hide-details
-        class="col-4 ml-auto"
-        prepend-inner-icon="mdi-magnify"
-        label="Search"
-        single-line
-        solo
-      />-->
-    </v-app-bar>
-    <v-navigation-drawer app v-model="drawer">
+    <v-navigation-drawer permanent app>
       <the-sidebar />
     </v-navigation-drawer>
+    <v-app-bar app>
+      <div class="wrapper">
+        <nuxt-link class="project_name" to="/articles">
+          <project-name :blok="project" class="col-2" />
+        </nuxt-link>
+        <v-text-field
+          dense
+          hide-details
+          class="col-4 ml-auto"
+          prepend-inner-icon="mdi-magnify"
+          label="Search"
+          single-line
+          solo
+        />
+      </div>
+    </v-app-bar>
   </div>
 </template>
 
 <script>
+import PlaygroundDrawer from "~/components/PlaygroundDrawer";
 import TheSidebar from "~/components/TheSidebar";
 import ProjectName from "~/components/ProjectName";
 import { mapGetters } from "vuex";
 
 export default {
   components: {
-    TheSidebar,
-    ProjectName
-  },
-  data() {
-    return {
-      drawer: true
-    };
+    ProjectName,
+    PlaygroundDrawer,
+    TheSidebar
   },
   computed: {
     ...mapGetters("home", ["project"])
@@ -47,8 +42,14 @@ export default {
 
 <style scoped lang="scss">
 .the_header {
-  .project_name {
-    color: #fff !important;
+  .wrapper {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1600px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 </style>

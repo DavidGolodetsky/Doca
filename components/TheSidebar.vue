@@ -1,6 +1,6 @@
 <template>
   <v-list class="the_sidebar" dense>
-    <v-list-group prepend-icon="mdi-home-city" :value="false">
+    <v-list-group prepend-icon="mdi-home-city" :value="true">
       <template v-slot:activator>
         <v-list-item-title>Home</v-list-item-title>
       </template>
@@ -19,21 +19,8 @@
 import { mapGetters } from "vuex";
 
 export default {
-  props: {
-    drawer: {
-      type: Boolean
-    }
-  },
-  data() {
-    return {
-      toggleDrawer: null
-    };
-  },
   computed: {
     ...mapGetters("articles", ["articles"])
-  },
-  created() {
-    this.toggleDrawer = this.drawer;
   }
 };
 </script>
@@ -42,9 +29,6 @@ export default {
 .the_sidebar {
   .nested_item {
     border-bottom: 1px solid grey;
-    &:hover .item_link {
-      color: $primary;
-    }
   }
   .item_link {
     width: 100%;

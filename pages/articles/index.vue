@@ -1,6 +1,6 @@
 <template>
   <div>
-    <component v-if="home" :key="home._uid" :blok="home" :is="home.component" />
+    <the-page v-if="home" :key="home._uid" :blok="home" :is="home.component" />
   </div>
 </template>
 <script>

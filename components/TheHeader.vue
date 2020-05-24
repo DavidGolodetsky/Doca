@@ -23,17 +23,9 @@
 </template>
 
 <script>
-import PlaygroundDrawer from "~/components/PlaygroundDrawer";
-import TheSidebar from "~/components/TheSidebar";
-import ProjectName from "~/components/ProjectName";
 import { mapGetters } from "vuex";
 
 export default {
-  components: {
-    ProjectName,
-    PlaygroundDrawer,
-    TheSidebar
-  },
   computed: {
     ...mapGetters("home", ["project"])
   }

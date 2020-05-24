@@ -17,9 +17,11 @@ module.exports = {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   loading: { color: colors.blue.darken2 },
-  plugins: ['~/plugins/components'],
+  plugins: [],
   buildModules: [
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    // TODO: Remove when upgrading to nuxt 2.13+
+    '@nuxt/components'
   ],
   modules: [
     [

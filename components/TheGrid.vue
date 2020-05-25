@@ -20,6 +20,7 @@ export default {
 <style lang="scss" scoped>
 .the_grid {
   display: grid;
+  grid-gap: 50px;
   grid-template:
     "head head side" 150px
     "main main side" 100px
@@ -27,7 +28,6 @@ export default {
     / 1fr 2fr 1fr;
 
   .grid_item {
-    margin: 20px;
     border: 1px solid grey;
     border-radius: 4px;
     padding: 20px;

@@ -20,11 +20,10 @@ module.exports = {
     port: 3010,
   },
   loading: { color: colors.blue.darken2 },
+  components: true,
   plugins: [],
   buildModules: [
-    '@nuxtjs/vuetify',
-    // TODO: Remove when upgrading to nuxt 2.13+
-    '@nuxt/components'
+    '@nuxtjs/vuetify'
   ],
   modules: [
     [

@@ -1,13 +1,13 @@
 <template>
   <v-app v-cloak id="app" class="app">
     <the-header />
-    <v-content>
+    <v-main>
       <v-container class="container">
         <main>
           <nuxt class="content" />
         </main>
       </v-container>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 

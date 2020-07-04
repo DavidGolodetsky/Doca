@@ -1,5 +1,5 @@
 <template>
-  <v-row>
+  <v-row class="article">
     <v-col cols="9">
       <lazy-article-block :blok="blok" v-for="(blok, i) in article.body" :key="i" />
     </v-col>
@@ -28,5 +28,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.article {
+  scroll-behavior: smooth;
+}
 </style>
 

@@ -32,8 +32,7 @@ module.exports = {
         accessToken: process.env.NODE_ENV === "production" ? 'RWdQ7L81dLfNGsdXr0M0Gwtt' : 'gxRH86qIPeC1TQa00G44Xwtt',
         caceProvider: 'memory'
       }
-    ],
-    ['vue-scrollto/nuxt', { duration: 300 }],
+    ]
   ],
   vuetify: {
     customVariables: ['~/assets/variables.scss'],

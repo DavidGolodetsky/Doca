@@ -6,7 +6,7 @@
     <v-app-bar app>
       <div class="wrapper">
         <nuxt-link class="project_name" to="/articles">
-          <project-name :blok="project" class="col-2" />
+          <project-name :blok="project" />
         </nuxt-link>
         <v-text-field
           dense

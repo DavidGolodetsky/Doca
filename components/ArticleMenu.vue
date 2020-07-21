@@ -2,7 +2,7 @@
   <div>
     <ul>
       <li v-for="(item, i) in blok" :key="i">
-        <a href="#" v-scroll-to="`#${item.id}`">{{ item.title }}</a>
+        <a :href="`#${item.id}`">{{ item.title }}</a>
       </li>
     </ul>
   </div>

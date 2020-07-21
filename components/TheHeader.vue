@@ -11,7 +11,7 @@
         <v-text-field
           dense
           hide-details
-          class="col-4 ml-auto"
+          class="search ml-auto"
           prepend-inner-icon="mdi-magnify"
           label="Search"
           single-line
@@ -42,6 +42,9 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+  .search {
+    max-width: 400px;
   }
 }
 </style>
